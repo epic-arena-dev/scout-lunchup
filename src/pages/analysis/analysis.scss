@@ -1,0 +1,121 @@
+@use "../../styles/variables.scss" as *;
+
+.page { padding-bottom: 40px; }
+
+.summary-bar {
+  background: $color-white;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $color-border;
+}
+.summary-text { font-size: 28px; color: #666; }
+.btn-sm {
+  background: $color-primary;
+  color: #fff;
+  font-size: 26px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+}
+
+.result-list { padding: 16px; }
+
+// Risk card
+.risk-card {
+  background: $color-white;
+  border-radius: $radius-card;
+  padding: 24px;
+  margin-bottom: 16px;
+  border-left: 4px solid $color-text-secondary;
+}
+.risk-card.risk-critical { border-left-color: $color-danger; }
+.risk-card.risk-high { border-left-color: $color-warning; }
+.risk-card.risk-pass { border-left-color: $color-success; }
+
+.risk-card-header { display: flex; align-items: center; gap: 12px; }
+.risk-badge {
+  color: #fff;
+  font-size: 22px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: $color-text-secondary;
+}
+.risk-badge-critical { background: $color-danger; }
+.risk-badge-high { background: $color-warning; }
+.risk-badge-pass { background: $color-success; }
+
+.risk-title { font-size: 28px; font-weight: 500; color: #1A1614; flex: 1; }
+
+.risk-detail { margin-top: 16px; padding-top: 16px; border-top: 1px solid $color-border; }
+.detail-section { margin-bottom: 12px; }
+.detail-label { font-size: 24px; font-weight: 600; color: #1A1614; display: block; margin-bottom: 6px; }
+.detail-text { font-size: 26px; color: #555; line-height: 1.6; display: block; }
+.evidence {
+  font-size: 22px;
+  color: #999;
+  font-style: italic;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+.suggestion-item { font-size: 24px; color: $color-primary; display: block; margin-bottom: 6px; line-height: 1.5; }
+
+// Shield illustration
+.shield-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0 16px;
+}
+.shield-icon {
+  width: 60px;
+  height: 72px;
+  background: $color-primary;
+  border-radius: 8px 8px 16px 16px;
+  position: relative;
+}
+.shield-message { font-size: 28px; color: $color-primary; margin-top: 16px; font-weight: 500; }
+
+// Animation
+.stickman-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+.flip-book {
+  width: 120px;
+  height: 140px;
+  perspective: 400px;
+}
+.flip-page {
+  width: 120px;
+  height: 140px;
+  background: $color-primary;
+  border-radius: 6px;
+  animation: flip 0.8s ease-in-out infinite;
+  transform-origin: left center;
+}
+@keyframes flip {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(-60deg); }
+  100% { transform: rotateY(0deg); }
+}
+.parsing-text { font-size: 28px; color: $color-text-secondary; margin-top: 24px; }
+
+// Parse result
+.parse-result {
+  background: $color-white;
+  border-radius: $radius-card;
+  padding: 20px;
+  margin: 16px 16px 0;
+}
+.parse-title { font-size: 30px; font-weight: 600; color: #1A1614; margin-bottom: 12px; }
+.parse-item { font-size: 26px; color: #555; margin-bottom: 8px; line-height: 1.5; }
+.parse-label { color: $color-text-secondary; }
+
+.page-center { display: flex; justify-content: center; align-items: center; height: 100vh; }

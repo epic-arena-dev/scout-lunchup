@@ -1,0 +1,137 @@
+@use "../../styles/variables.scss" as *;
+
+.tools-page {
+  min-height: 100vh;
+  background: $color-bg;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tools-header {
+  padding: 32px 16px 20px;
+  background: $color-primary;
+  color: #fff;
+}
+
+.tools-title {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.tools-subtitle {
+  display: block;
+  font-size: 24px;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+.tools-categories {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tools-category {
+  background: $color-white;
+  border-radius: $radius-card;
+  overflow: hidden;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 16px;
+  border-bottom: 1px solid $color-border;
+  gap: 12px;
+}
+
+.cat-icon {
+  font-size: 36px;
+  width: 52px;
+  text-align: center;
+}
+
+.cat-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-label {
+  font-size: 28px;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.cat-desc {
+  font-size: 22px;
+  color: $color-text-secondary;
+  margin-top: 4px;
+}
+
+.cat-count {
+  font-size: 22px;
+  color: $color-primary;
+  font-weight: 600;
+  background: rgba(22, 93, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.cat-tools {
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px;
+  border-bottom: 1px solid rgba(194, 120, 75, 0.06);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:active {
+    background: rgba(22, 93, 255, 0.04);
+  }
+}
+
+.tool-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-name {
+  font-size: 26px;
+  font-weight: 500;
+  color: $color-text-primary;
+}
+
+.tool-desc {
+  font-size: 22px;
+  color: $color-text-secondary;
+  margin-top: 4px;
+}
+
+.tool-arrow {
+  font-size: 28px;
+  color: $color-text-secondary;
+  margin-left: 8px;
+}
+
+.tools-footer {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.tools-footer-text {
+  font-size: 22px;
+  color: $color-text-secondary;
+  line-height: 1.6;
+}

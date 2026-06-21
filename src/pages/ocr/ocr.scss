@@ -1,0 +1,357 @@
+@use "../../styles/variables.scss" as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Capture Step ===== */
+.ocr-scanner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  min-height: 100vh;
+}
+
+.viewfinder {
+  margin-bottom: 48px;
+}
+
+.viewfinder-frame {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-color: $color-primary;
+  border-style: solid;
+
+  &.tl { top: 0; left: 0; border-width: 6px 0 0 6px; border-radius: 8px 0 0 0; }
+  &.tr { top: 0; right: 0; border-width: 6px 6px 0 0; border-radius: 0 8px 0 0; }
+  &.bl { bottom: 0; left: 0; border-width: 0 0 6px 6px; border-radius: 0 0 0 8px; }
+  &.br { bottom: 0; right: 0; border-width: 0 6px 6px 0; border-radius: 0 0 8px 0; }
+}
+
+.viewfinder-hint {
+  color: $color-text-secondary;
+  font-size: 26px;
+  text-align: center;
+}
+
+.camera-icon {
+  margin-bottom: 64px;
+}
+
+.camera-body {
+  width: 120px;
+  height: 96px;
+  background: $color-white;
+  border: 4px solid $color-border;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -12px;
+    width: 36px;
+    height: 10px;
+    background: $color-border;
+    border-radius: 4px;
+  }
+}
+
+.camera-lens {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $color-primary;
+  opacity: 0.15;
+  border: 3px solid $color-primary;
+}
+
+.error-banner {
+  background: rgba($color-danger, 0.08);
+  border: 1px solid rgba($color-danger, 0.25);
+  border-radius: $radius-btn;
+  padding: 12px 24px;
+  margin-bottom: 24px;
+
+  Text { color: $color-danger; font-size: 26px; }
+}
+
+.capture-actions {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.btn-camera,
+.btn-album {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 36px 24px;
+  border-radius: $radius-card;
+  background: $color-white;
+  border: 2px solid $color-border;
+  font-size: 28px;
+  color: $color-text-primary;
+  line-height: 1;
+
+  &::after { border: none; }
+}
+
+.btn-icon {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.capture-tip {
+  margin-top: 40px;
+  font-size: 24px;
+  color: $color-text-secondary;
+  text-align: center;
+}
+
+/* ===== Preview Step ===== */
+.preview-section {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 24px;
+  color: $color-text-primary;
+}
+
+.preview-image-wrap {
+  flex: 1;
+  background: $color-white;
+  border-radius: $radius-card;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  border: 1px solid $color-border;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-outline {
+  flex: 1;
+  background: $color-white;
+  color: $color-primary;
+  font-size: 30px;
+  padding: 24px;
+  border-radius: $radius-card;
+  border: 2px solid $color-primary;
+  line-height: 1;
+
+  &::after { border: none; }
+}
+
+.btn-primary {
+  flex: 1;
+  background: $color-primary;
+  color: #fff;
+  font-size: 30px;
+  padding: 24px;
+  border-radius: $radius-card;
+  border: none;
+  line-height: 1;
+
+  &::after { border: none; }
+}
+
+/* ===== Processing Step ===== */
+.processing-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 48px;
+  min-height: 100vh;
+}
+
+.processing-spinner {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.spinner-ring {
+  position: absolute;
+  inset: 0;
+  border: 6px solid $color-border;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-inner {
+  position: absolute;
+  inset: 16px;
+  border: 4px solid rgba($color-primary, 0.12);
+  border-top-color: rgba($color-primary, 0.4);
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite reverse;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.processing-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: 12px;
+}
+
+.processing-hint {
+  font-size: 26px;
+  color: $color-text-secondary;
+  margin-bottom: 24px;
+}
+
+.progress-track {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background: $color-warm-bg-alt;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: $color-primary;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.processing-sub {
+  font-size: 24px;
+  color: $color-text-secondary;
+  opacity: 0.7;
+}
+
+/* ===== Result Step ===== */
+.result-scroll {
+  flex: 1;
+  padding: 0 32px;
+}
+
+.result-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 32px;
+}
+
+.result-icon {
+  font-size: 72px;
+  margin-bottom: 16px;
+}
+
+.result-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: $color-text-primary;
+  margin-bottom: 8px;
+}
+
+.result-confidence {
+  font-size: 26px;
+  color: $color-text-secondary;
+}
+
+/* Field cards */
+.result-fields {
+  margin-bottom: 24px;
+}
+
+.field-card {
+  background: $color-white;
+  border-radius: $radius-card;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  border: 1px solid $color-border;
+}
+
+.field-label {
+  font-size: 24px;
+  color: $color-text-secondary;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.field-value {
+  font-size: 30px;
+  color: $color-text-primary;
+  font-weight: 500;
+  display: block;
+  word-break: break-all;
+}
+
+/* Raw text */
+.raw-text-section {
+  margin-bottom: 32px;
+}
+
+.raw-text-card {
+  background: $color-warm-bg-alt;
+  border-radius: $radius-card;
+  padding: 24px;
+}
+
+.raw-text-content {
+  font-size: 26px;
+  color: $color-text-primary;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Result actions */
+.result-actions {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0 48px;
+}

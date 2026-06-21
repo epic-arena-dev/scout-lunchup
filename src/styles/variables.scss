@@ -1,0 +1,52 @@
+// ===== EpicArena Mini-Program Design Tokens v3 =====
+// Synced with frontend/src/index.css
+
+// Brand
+$brand: #165DFF;
+$brand-hover: #1452E6;
+$brand-active: #0E42D2;
+$brand-muted: rgba(22,93,255,0.10);
+$copper: #C2784B;
+$copper-light: #E8C9A8;
+$copper-dark: #9E5E35;
+
+// Light theme (default)
+$bg: #FAF7F4;
+$bg-alt: #F0EBE5;
+$fg: #1A1614;
+$fg-muted: #6B5E53;
+$fg-subtle: #9B8E84;
+$card: #ffffff;
+$card-hover: #FDFCFB;
+$border: rgba(194,120,75,0.12);
+$border-hover: rgba(194,120,75,0.25);
+
+// Semantic
+$success: #22C55E;
+$warning: #F59E0B;
+$danger: #EF4444;
+
+// Spacing
+$radius-card: 12px;
+$radius-btn: 8px;
+$spacing-unit: 4px;
+
+// Font
+$font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+$font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+// === Legacy aliases for backward compatibility ===
+$color-primary: $brand;
+$color-success: $success;
+$color-danger: $danger;
+$color-warning: $warning;
+$color-copper: $copper;
+$color-copper-light: $copper-light;
+$color-copper-dark: $copper-dark;
+$color-warm-bg: $bg;
+$color-warm-bg-alt: $bg-alt;
+$color-text-primary: $fg;
+$color-text-secondary: $fg-muted;
+$color-bg: $bg;
+$color-white: #ffffff;
+$color-border: #E8C9A8;

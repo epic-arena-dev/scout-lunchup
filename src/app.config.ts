@@ -1,0 +1,55 @@
+export default {
+  pages: [
+    "pages/login/login",
+    "pages/dashboard/dashboard",
+    "pages/projects/projects",
+    "pages/advisor/advisor",
+    "pages/profile/profile",
+    "pages/analysis/analysis",
+    "pages/bid/bid",
+    "pages/preview/preview",
+    "pages/subscription/subscription",
+    "pages/tools/tools",
+    "pages/expert-chat/expert-chat",
+    "pages/ocr/ocr",
+    "pages/payment/payment",
+  ],
+  tabBar: {
+    color: "#6B5E53",
+    selectedColor: "#165DFF",
+    backgroundColor: "#ffffff",
+    borderStyle: "white",
+    list: [
+      {
+        pagePath: "pages/dashboard/dashboard",
+        text: "Workbench",
+        iconPath: "assets/tabbar/dashboard.png",
+        selectedIconPath: "assets/tabbar/dashboard-active.png",
+      },
+      {
+        pagePath: "pages/projects/projects",
+        text: "Projects",
+        iconPath: "assets/tabbar/projects.png",
+        selectedIconPath: "assets/tabbar/projects-active.png",
+      },
+      {
+        pagePath: "pages/advisor/advisor",
+        text: "Advisor",
+        iconPath: "assets/tabbar/advisor.png",
+        selectedIconPath: "assets/tabbar/advisor-active.png",
+      },
+      {
+        pagePath: "pages/profile/profile",
+        text: "Profile",
+        iconPath: "assets/tabbar/profile.png",
+        selectedIconPath: "assets/tabbar/profile-active.png",
+      },
+    ],
+  },
+  window: {
+    navigationBarBackgroundColor: "#165DFF",
+    navigationBarTitleText: "EpicArena",
+    navigationBarTextStyle: "white",
+    backgroundColor: "#FAF7F4",
+  },
+}

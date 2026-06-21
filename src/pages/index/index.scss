@@ -1,0 +1,11 @@
+.lunch-page { padding: 16px; background: #f5f5f5; min-height: 100vh; }
+.header { text-align: center; padding: 20px 0; }
+.title { font-size: 28px; font-weight: bold; color: #e74c3c; }
+.create-section { display: flex; gap: 8px; margin-bottom: 16px; }
+.input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+.btn { background: #e74c3c; color: #fff; border-radius: 8px; padding: 10px 20px; }
+.group-card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+.group-name { font-size: 18px; font-weight: 600; }
+.group-time { color: #666; }
+.group-count { color: #999; }
+.join-btn { background: #27ae60; color: #fff; border-radius: 8px; padding: 6px 16px; }
